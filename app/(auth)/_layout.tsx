@@ -14,7 +14,7 @@ export default function _layout() {
        options={{headerShown: false}}
       />
        <Stack.Screen
-       name='Signout'
+       name='SignUp'
        options={{headerShown: false}}
       />
     </Stack>

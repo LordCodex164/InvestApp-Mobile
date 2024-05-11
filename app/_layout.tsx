@@ -5,6 +5,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from '@/hooks/useColorScheme';
+import {ClerkProvider, SignedIn, SignedOut, useSignIn, useSignUp} from "@clerk/clerk-expo"
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -12,7 +13,14 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    DMSansRegular: require('../assets/fonts/DMSans-Regular.ttf'),
+    DMSansExtraBold: require('../assets/fonts/DMSans-ExtraBold.ttf'),
+    DMSansItalic: require('../assets/fonts/DMSans-Italic.ttf'),
+    DMSansLight: require('../assets/fonts/DMSans-Light.ttf'),
+    DMSansMedium: require('../assets/fonts/DMSans-Medium.ttf'),
+    DMSansExtraLight: require('../assets/fonts/DMSans-ExtraLight.ttf'),
+    DMSansSemiBold: require('../assets/fonts/DMSans_18pt-SemiBold.ttf'),
+    DMSansBold: require('../assets/fonts/DMSans_18pt-Bold.ttf'),
   });
 
   useEffect(() => {

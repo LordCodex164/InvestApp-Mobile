@@ -1,6 +1,6 @@
 import { StyleSheet, Text, SafeAreaView, View, ScrollView, Image, TouchableOpacity } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { useNavigation } from 'expo-router'
+import { useNavigation, router } from 'expo-router'
 
 export default function Welcome() {
 
@@ -12,16 +12,16 @@ export default function Welcome() {
 
             <Image source={require("../assets/images/image.png")} style={{width: 300, height: 272.23}}/>
             <View>
-              <Text style={{fontFamily: "SpaceMono", textAlign: "center", fontWeight: "bold", fontSize: 34}}>Stay on top of your {"\n"} finance with us</Text>
-              <Text style={{fontFamily: "SpaceMono",  textAlign: "center", fontSize: 17}}>We are your new financial Advisors {"\n"}
+              <Text style={{fontFamily: "DMSansMedium", textAlign: "center", fontSize: 34}}>Stay on top of your {"\n"} finance with us.</Text>
+              <Text style={{fontFamily: "DMSansLight",  textAlign: "center", fontSize: 17}}>We are your new financial Advisors {"\n"}
               to recommed the best investments {"\n"} for you.</Text>
             </View>
 
             <View style={styles.btnContainer}>
-              <TouchableOpacity style={styles.createAccount}>
-                <Text style={{color: "#fff"}}>Create account</Text>
+              <TouchableOpacity onPress={() => router.push("/(auth)/SignUp")} style={styles.createAccount}>
+                <Text style={{color: "#fff", fontFamily: "DMSansRegular"}}>Create account</Text>
               </TouchableOpacity>
-               <TouchableOpacity style={{marginVertical: 17}}>
+               <TouchableOpacity onPress={() => router.push("/(auth)/Signin")} style={{marginVertical: 17}}>
                 <Text style={styles.loginBtn}>Login</Text>
                </TouchableOpacity>
             </View>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     },
     subContainer:{
      display: "flex",
-     paddingTop: 154,
+     paddingTop: 120,
      alignItems: "center"
     },
     btnContainer:{
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
       borderRadius: 20
     },
     loginBtn:{
-      color: "#31A062"
+      color: "#31A062",
+      fontFamily: "DMSansRegular"
     }
 })
